@@ -1,0 +1,129 @@
+<html>
+<style>
+#header{text-color:black; margin:0; background-color:;  height:50px;  padding:10px;border-top:8px solid #4567ff;
+border-bottom:8px solid #4567ff;
+	text-align:;font-size:40px}
+
+ 
+
+#frame {background-color:white;margin-left:10px;text-align:left;width:1200px;height:2000;border-bottom:8px solid #12345f;border-right:8px solid #12345f;border-left:8px solid #12345f;}
+
+h2{font-size:20px;color:maroon;text-align:center; font-family:arial;
+	font-style:italic;}
+h3{font-size:20px;color:maroon;text-align:center; font-family:arial;
+	font-style:italic;}
+h4{font-size:20px;color:maroon;text-align:center; font-family:arial;
+	font-style:italic;}
+h5{font-size:20px;color:maroon;text-align:center; font-family:arial;
+	font-style:italic;}
+h6{font-size:20px;color:maroon;text-align:center; font-family:arial;
+	font-style:italic;}
+p{color:green;}
+.indent{text-indent:6em;}
+pre{color:#00005f;padding:20px 10px 10px 10px;font-size:20px;}
+</style>
+
+
+<body>
+<div id="frame">
+<div id="header">{{s}}</div>
+
+{% if nom %}
+<h2>NOUN</h2>
+{% for i in nom %}
+<ul>
+<li>{{i.meaning}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+
+{% if noe %}
+<pre>Example</pre>
+{% for i in noe %}
+<p class="indent">{{i.example}}</p>
+{% endfor %}
+{% endif %}
+
+{% if adjm %}
+<h3>ADJECTIVE</h3>
+{% for i in adjm %}
+<ul>
+<li>{{i.meaning}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% if adje %}
+<pre>Example</pre>
+{% for i in adje %}
+<p class="indent">{{i.example}}</p>
+{% endfor %}
+{% endif %}
+
+
+{% if adm %}
+<h4>ADVERB</h4>
+{% for i in adm %}
+<ul>
+<li>{{i.meaning}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% if ade %}
+<pre>Example</pre>
+{% for i in ade %}
+<p class="indent">{{i.example}}</p>
+{% endfor %}
+{% endif %}
+
+{% if verm %}
+<h5>VERB</h5>
+{% for i in verm %}
+<ul>
+<li>{{i.meaning}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% if vere %}
+<pre>Example</pre>
+{% for i in vere %}
+<p class="indent">{{i.example}}</p>
+{% endfor %}
+{% endif %}
+
+
+
+{% if r %}
+
+<h2>DERIVED WORDS</h2>
+{% for i in r %}
+<ul>
+<li>{{i.derived}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+
+{% if sy %}
+
+<h6>SYNONYMS</h6>
+{% for i in sy %}
+<ul>
+<li>{{i.synon}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+
+
+{% if h %}
+
+<h6>HYPERNYMS</h6>
+{% for i in h %}
+<ul>
+<li>{{i.hyper}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+
+
+</div>
+</body>
+</html>
